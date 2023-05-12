@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import image1 from "../../Images/r1.png";
 import image2 from "../../Images/r2.png";
 import image3 from "../../Images/r3.png";
 
 import { BsFlag, BsTag } from "react-icons/bs";
 import { TbNotes } from "react-icons/tb";
+import CustomModaL from "../Modal";
 
 const OrdersCard = ({ image, tittle, icon }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancle = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="px-3 py-3">
       <img className="mb-2" src={image} alt="Fast Food" />
@@ -15,9 +28,17 @@ const OrdersCard = ({ image, tittle, icon }) => {
         Lorem ipsum dolor sit Seamlessly empower fully researched growth
         strategies interoperable internal.
       </p>
-      <button className="flex items-center _hover_effect border-2 border-[#f77825] font-bold rounded my-[5px] text-[#f77825] px-3 py-2  ">
+      <button
+        onClick={showModal}
+        className="flex items-center _hover_effect border-2 border-[#f77825] font-bold rounded my-[5px] text-[#f77825] px-3 py-2  "
+      >
         {icon} <span className="ml-2">Order Meal</span>
       </button>
+      <CustomModaL
+        handleCancle={handleCancle}
+        handleOk={handleOk}
+        isModalOpen={isModalOpen}
+      />
     </div>
   );
 };

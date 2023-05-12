@@ -1,9 +1,8 @@
 import React from "react";
-import { Button, Modal } from "antd";
-import { useState } from "react";
-
+import { Modal } from "antd";
 import { BsFileText } from "react-icons/bs";
-const Modaltest = ({ isModalOpen, handleOk, handleCancle }) => {
+
+const CustomModaL = ({ isModalOpen, handleOk, handleCancle }) => {
   return (
     <Modal
       className=" justify-center flex items-center   scroll-smooth   px-[30px] py-[30px]"
@@ -75,4 +74,4 @@ const Modaltest = ({ isModalOpen, handleOk, handleCancle }) => {
   );
 };
 
-export default Modaltest;
+export default CustomModaL;

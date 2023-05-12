@@ -1,20 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsFileText } from "react-icons/bs";
 
 import { BsArrowDownCircle } from "react-icons/bs";
+import CustomModaL from "../Modal";
 function Home() {
-  // const [isModalOpen, SetisModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // const showModal = () => {
-  //   SetisModalOpen(true);
-  // };
+  const showModal = () => {
+    setIsModalOpen(true);
+    console.log(showModal);
+  };
 
-  // const handleOk = () => {
-  //   SetisModalOpen(false);
-  // };
-  // const handleCancle = () => {
-  //   SetisModalOpen(false);
-  // };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancle = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="pt-28 pb-[60px] mx-10 mb-50 flex justify-center flex-col text-center">
@@ -28,7 +30,10 @@ function Home() {
           developers are ready to complete.
         </p>
         <div className="flex  justify-center">
-          <button className="text-[#ffffff] _hover_effect text-xl my-5 px-4 py-3 rounded font-bold flex items-center justify-center border-2 ">
+          <button
+            onClick={showModal}
+            className="text-[#ffffff] _hover_effect text-xl my-5 px-4 py-3 rounded font-bold flex items-center justify-center border-2 "
+          >
             <BsFileText className="mr-3 " size={22} /> Make a Reservation
           </button>
         </div>
@@ -39,6 +44,11 @@ function Home() {
       >
         <BsArrowDownCircle size={45} />
       </a>
+      <CustomModaL
+        handleCancle={handleCancle}
+        handleOk={handleOk}
+        isModalOpen={isModalOpen}
+      />
     </div>
   );
 }

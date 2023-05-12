@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../Images/logo.png";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { TiSocialInstagram } from "react-icons/ti";
+import CustomModaL from "../Modal";
 
 function Nav() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => setIsModalOpen(true);
+  const handleOk = () => setIsModalOpen(false);
+  const handleCancle = () => setIsModalOpen(false);
+
   return (
     <section className="flex justify-between items-center py-5 ">
       <div className="">
@@ -21,7 +28,7 @@ function Nav() {
               Recipes
             </li>
           </a>
-          <a href="!#">
+          <a onClick={showModal} href="!#">
             <li className="px-5 text-[15px] _hover_effect text-[#CCCCCC] font-bold">
               Reserve Now
             </li>
@@ -47,6 +54,11 @@ function Nav() {
           </a>
         </ul>
       </div>
+      <CustomModaL
+        handleCancle={handleCancle}
+        handleOk={handleOk}
+        isModalOpen={isModalOpen}
+      />
     </section>
   );
 }
