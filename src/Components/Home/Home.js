@@ -19,7 +19,7 @@ function Home() {
   };
 
   return (
-    <div className="pt-28 pb-[60px] mx-10 mb-50 flex justify-center flex-col text-center">
+    <div className="pt-28 pb-[60px] mx-10 mb-50 flex  justify-center flex-col text-center">
       <div className="pb-[60px]">
         <div className="font-bold text-2xl text-white ">
           <h1 className="mb-5 text-5xl ">Restaurant Landing Page</h1>
@@ -32,7 +32,7 @@ function Home() {
         <div className="flex  justify-center">
           <button
             onClick={showModal}
-            className="text-[#ffffff] _hover_effect text-xl my-5 px-4 py-3 rounded font-bold flex items-center justify-center border-2 "
+            className="text-[#ffffff] _hover_effect text-xl my-[5px] px-[22px] py-[15px] rounded font-bold flex items-center justify-center border-2 "
           >
             <BsFileText className="mr-3 " size={22} /> Make a Reservation
           </button>
@@ -40,7 +40,7 @@ function Home() {
       </div>
       <a
         href="#order"
-        className="text-[#ffffff] text-4xl flex pt-12 mt-14 justify-center text-center "
+        className="text-[#ffffff] text-4xl flex p-14 mt-16 justify-center text-center "
       >
         <BsArrowDownCircle size={45} />
       </a>

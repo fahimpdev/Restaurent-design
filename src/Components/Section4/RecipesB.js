@@ -4,7 +4,7 @@ import Container from "../Container";
 
 function RecipesB() {
   return (
-    <div className="relative">
+    <div className="relative recipesBbg ">
       <div className="absolute h-full w-1/2 right-0  bg-white" />
       <Container>
         <div className="grid grid-cols-2 py-[60px]">

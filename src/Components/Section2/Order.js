@@ -6,6 +6,7 @@ import image3 from "../../Images/r3.png";
 import { BsFlag, BsTag } from "react-icons/bs";
 import { TbNotes } from "react-icons/tb";
 import CustomModaL from "../Modal";
+import Container from "../Container";
 
 const OrdersCard = ({ image, tittle, icon }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,22 +46,34 @@ const OrdersCard = ({ image, tittle, icon }) => {
 
 function Order() {
   return (
-    <div id="order" className="py-[60px]">
-      <div className="grid mb-5  grid-cols-2">
-        <h1 className="text-5xl text-[#444444]  font-bold">
-          Make Awesome Heading Section
-        </h1>
-        <p className="text-xl text-[#bbbbbb]">
-          From logo design to website development,
-          <br /> hand-picked designers and developers are
-          <br /> ready to complete your new project.
-        </p>
-      </div>
-      <div className="grid grid-cols-3">
-        <OrdersCard image={image1} tittle="Fast Food" icon={<TbNotes />} />
-        <OrdersCard image={image2} tittle="Drinks & Snacks" icon={<BsTag />} />
-        <OrdersCard image={image3} tittle="Main Menu Food" icon={<BsFlag />} />
-      </div>
+    <div>
+      <Container>
+        <div id="order" className="py-[60px]">
+          <div className="grid mb-5  grid-cols-2">
+            <h1 className="text-5xl text-[#444444]  font-bold">
+              Make Awesome Heading Section
+            </h1>
+            <p className="text-xl text-[#bbbbbb]">
+              From logo design to website development,
+              <br /> hand-picked designers and developers are
+              <br /> ready to complete your new project.
+            </p>
+          </div>
+          <div className="grid grid-cols-3">
+            <OrdersCard image={image1} tittle="Fast Food" icon={<TbNotes />} />
+            <OrdersCard
+              image={image2}
+              tittle="Drinks & Snacks"
+              icon={<BsTag />}
+            />
+            <OrdersCard
+              image={image3}
+              tittle="Main Menu Food"
+              icon={<BsFlag />}
+            />
+          </div>
+        </div>
+      </Container>
     </div>
   );
 }

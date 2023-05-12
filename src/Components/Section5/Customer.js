@@ -1,6 +1,7 @@
 import React from "react";
 import customer1 from "../../Images/t3.png";
 import customer2 from "../../Images/t2.png";
+import Container from "../Container";
 
 function Customer() {
   const CustomerInfo = ({ image, name }) => {
@@ -24,21 +25,25 @@ function Customer() {
   };
 
   return (
-    <div className="py-[60px]">
-      <div className="grid mb-5  grid-cols-2">
-        <h1 className="text-5xl mb-5 font-bold">
-          Make Awesome Heading Section
-        </h1>
-        <p className="text-xl mb-5 text-[#bbbbbb]">
-          From logo design to website development,
-          <br /> hand-picked designers and developers are
-          <br /> ready to complete your new project.
-        </p>
-      </div>
-      <div className="grid grid-cols-2 gap-5 mt-[60px] ">
-        <CustomerInfo image={customer1} name="Mark Smith" />
-        <CustomerInfo image={customer2} name="John Due" />
-      </div>
+    <div className="bg-[#f3f3f3]">
+      <Container>
+        <div className="py-[60px]">
+          <div className="grid mb-5  grid-cols-2">
+            <h1 className="text-5xl mb-5 font-bold">
+              Make Awesome Heading Section
+            </h1>
+            <p className="text-xl mb-5 text-[#bbbbbb]">
+              From logo design to website development,
+              <br /> hand-picked designers and developers are
+              <br /> ready to complete your new project.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-5 mt-[60px] ">
+            <CustomerInfo image={customer1} name="Mark Smith" />
+            <CustomerInfo image={customer2} name="John Due" />
+          </div>
+        </div>
+      </Container>
     </div>
   );
 }
