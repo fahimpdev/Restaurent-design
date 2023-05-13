@@ -6,6 +6,16 @@ import CustomModaL from "../Modal";
 import Container from "../Container";
 import Home from "../Home/Home";
 
+const Navli = ({ tittle, link, onClick }) => {
+  return (
+    <a onClick={onClick} href={link}>
+      <li className="px-5 text-[15px] _hover_effect text-[#CCCCCC] font-bold">
+        {tittle}
+      </li>
+    </a>
+  );
+};
+
 function Nav() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -23,21 +33,9 @@ function Nav() {
             </div>
             <div>
               <ul className="flex ">
-                <a href="#order">
-                  <li className="px-5 text-[15px] _hover_effect text-[#CCCCCC] font-bold">
-                    Service
-                  </li>
-                </a>
-                <a href="#recipes">
-                  <li className="px-5 text-[15px] _hover_effect  text-[#CCCCCC] font-bold">
-                    Recipes
-                  </li>
-                </a>
-                <a onClick={showModal} href="!#">
-                  <li className="px-5 text-[15px] _hover_effect text-[#CCCCCC] font-bold">
-                    Reserve Now
-                  </li>
-                </a>
+                <Navli tittle="Service" link="#order" />
+                <Navli tittle="Recipes" link="#recipes" />
+                <Navli tittle="Reserve Now" link="!#" onClick={showModal} />
 
                 <a
                   className="px-2 text-[#CCCCCC] _hover_effect  font-bold flex justify-center items-center"
